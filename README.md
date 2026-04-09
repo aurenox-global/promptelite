@@ -230,9 +230,9 @@ Este proyecto combina el conocimiento de:
 
 ¿Tienes preguntas o sugerencias?
 
-- 📧 Email: tu-email@ejemplo.com
-- 💬 Issues: [GitHub Issues](https://github.com/tu-usuario/prompt-elite-mastery/issues)
-- 🐦 Twitter: @tu-usuario
+
+- 💬 Issues: [GitHub Issues](https://github.com/aurenox-global/prompt-elite-mastery/issues)
+- 🐦 Telegram: @adminski
 
 ---
 
