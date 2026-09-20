@@ -11,9 +11,10 @@
 ---
 
 ## 🌐 Vista Previa
-![PROMPT ELITE MASTERY Preview](https://via.placeholder.com/1200x630/0f172a/38bdf8?text=PROMPT+ELITE+MASTERY+%7C+Gu%C3%ADa+Definitiva)
+![PROMPT ELITE MASTERY Preview](assets/img/img1.webp)
 
-> 🖥️ **Versión Web Interactiva**: Abre [`index.html`](index.html) en cualquier navegador moderno. Cero dependencias externas. Carga instantánea. Diseño responsive con glassmorphism y animaciones optimizadas.
+> 🖥️ **Versión Web Interactiva**: <https://aurenox-global.github.io/promptelite/> (o abre [`index.html`](index.html) en cualquier navegador).
+> **100% offline**: sin CDNs ni dependencias externas — CSS, fuentes, iconos e imágenes van incluidos en el repo (`assets/`). Carga instantánea y diseño responsive con glassmorphism.
 
 ---
 
@@ -30,8 +31,8 @@
 ## 🚀 Quick Start
 ```bash
 # 1. Clona o descarga el archivo
-git clone https://github.com/tu-usuario/prompt-elite-mastery.git
-cd prompt-elite-mastery
+git clone https://github.com/aurenox-global/promptelite.git
+cd promptelite
 
 # 2. Abre directamente en tu navegador
 open index.html   # macOS
@@ -63,7 +64,7 @@ start index.html    # Windows
 - ❌ INSTRUCCIÓN BASURA (147 tokens)
 - "Hola, espero que estés bien. Quería saber si podrías ayudarme con una pequeña tarea. 
 - Necesito que me hagas un resumen de las ventajas del teletrabajo, pero que sea breve 
-- y con puntos clave. Muchas gracias de antemario."
+- y con puntos clave. Muchas gracias de antemano."
 
 + ✅ INSTRUCCIÓN ÓPTIMA (22 tokens)
 + "Resume ventajas del teletrabajo. 5 viñetas. Tono profesional. Solo puntos clave."
@@ -81,7 +82,7 @@ start index.html    # Windows
 | `§ 04` Código | Python, React/TS, SQL, Video Pipeline | Prompts para devs senior |
 | `§ 05` Texto | Control de voz, Email, Resumen, Landing | Copy predecible y denso |
 | `§ 06` Plantillas | `T-01` a `T-06` listas para copiar/pegar | Ahorro de `10-30 min` por tarea |
-| `§ 07` Checklist | 8 puntos pre-envío | Garante de calidad `>95%` |
+| `§ 07` Checklist | 8 puntos pre-envío | Garantía de calidad `>95%` |
 | `§ 08` Errores | 6 antipatrones que queman tokens | Evita `~200-800` tokens desperdiciados |
 
 ---
@@ -112,12 +113,12 @@ Si no hay issues: escribe "✓ OK".
 ---
 
 ## 🧰 Stack Tecnológico
-- 🎨 **Tailwind CSS** (CDN) → Diseño utility-first, responsive, dark-mode nativo
+- 🎨 **Tailwind CSS** compilado a CSS estático (`assets/app.css`) → sin runtime en el navegador
 - ⚡ **Vanilla JavaScript** → Interactividad ligera, 0 frameworks
-- 🔤 **Google Fonts** → `Inter` + `JetBrains Mono` para legibilidad técnica
-- 🖼️ **Font Awesome 6** → Iconografía semántica
+- 🔤 **Inter + JetBrains Mono** self-hosted (`assets/fonts.css`) → sin peticiones a Google
+- 🖼️ **Font Awesome 6** self-hosted (`assets/fontawesome/`) → iconografía offline
 - 🌌 **Glassmorphism + Mesh Gradients** → UI moderna sin sobrecarga
-- 📦 **Arquitectura Single-File** → `index.html` autocontenido, portable, offline-first
+- 📦 **Estático y offline-first** → todos los recursos locales en `assets/`, cero dependencias externas
 
 ---
 
@@ -133,7 +134,7 @@ git push origin feat/nueva-plantilla
 ---
 
 ## 📄 Licencia
-[MIT](LICENSE) © 2026 — Creado con precisión. Sin tokens desperdiciados.
+[MIT](LICENSE) © 2026 Andres MAG — Creado con precisión. Sin tokens desperdiciados.
 
 ---
 > 🔗 **Úsalo en**: ChatGPT, Claude, Gemini, Copilot, Llama, Mistral, Ollama, o cualquier LLM.  

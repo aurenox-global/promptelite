@@ -4,80 +4,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="PROMPT ELITE MASTERY — Guía definitiva 5-en-1 de prompt engineering: 6 principios, patrones, plantillas y checklist para escribir prompts densos y ahorrar hasta un 73% de tokens. Creador: Andres MAG.">
+    <link rel="canonical" href="https://aurenox-global.github.io/promptelite/">
+    <meta name="theme-color" content="#0ea5e9">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="PROMPT ELITE MASTERY">
+    <meta property="og:title" content="PROMPT ELITE MASTERY | Guía Definitiva">
+    <meta property="og:description" content="Guía 5-en-1 de prompt engineering: 73% menos tokens, 12 reglas de oro, patrones, plantillas y checklist pre-envío.">
+    <meta property="og:url" content="https://aurenox-global.github.io/promptelite/">
+    <meta property="og:image" content="https://aurenox-global.github.io/promptelite/assets/img/img1.webp">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="PROMPT ELITE MASTERY | Guía Definitiva">
+    <meta name="twitter:description" content="Guía 5-en-1 de prompt engineering: 73% menos tokens, 12 reglas de oro, patrones, plantillas y checklist.">
+    <meta name="twitter:image" content="https://aurenox-global.github.io/promptelite/assets/img/img1.webp">
     <title>PROMPT ELITE MASTERY | Guía Definitiva</title>
     
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-    
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Fuentes (self-hosted · offline) -->
+    <link rel="stylesheet" href="assets/fonts.css">
 
-    <!-- Tailwind Config -->
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        mono: ['JetBrains Mono', 'monospace'],
-                    },
-                    colors: {
-                        primary: {
-                            50: '#f0f9ff',
-                            100: '#e0f2fe',
-                            200: '#bae6fd',
-                            300: '#7dd3fc',
-                            400: '#38bdf8',
-                            500: '#0ea5e9',
-                            600: '#0284c7',
-                            700: '#0369a1',
-                            800: '#075985',
-                            900: '#0c4a6e',
-                            950: '#082f49',
-                        },
-                        accent: {
-                            400: '#a78bfa',
-                            500: '#8b5cf6',
-                            600: '#7c3aed',
-                        },
-                        dark: {
-                            900: '#030712',
-                            800: '#0f172a',
-                            700: '#1e293b',
-                            600: '#334155',
-                        }
-                    },
-                    animation: {
-                        'float': 'float 6s ease-in-out infinite',
-                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-                        'gradient-x': 'gradient-x 15s ease infinite',
-                    },
-                    keyframes: {
-                        float: {
-                            '0%, 100%': { transform: 'translateY(0)' },
-                            '50%': { transform: 'translateY(-20px)' },
-                        },
-                        'gradient-x': {
-                            '0%, 100%': {
-                                'background-size': '200% 200%',
-                                'background-position': 'left center'
-                            },
-                            '50%': {
-                                'background-size': '200% 200%',
-                                'background-position': 'right center'
-                            },
-                        },
-                    }
-                }
-            }
-        }
-    </script>
+    <!-- Tailwind CSS compilado (estático · offline) -->
+    <link rel="stylesheet" href="assets/app.css">
+
+    <!-- Iconos Font Awesome (self-hosted · offline) -->
+    <link rel="stylesheet" href="assets/fontawesome/all.min.css">
+
+    <!-- Favicon -->
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="assets/favicon.svg">
 
     <style>
         /* Custom Scrollbar */
@@ -325,7 +278,7 @@
         <section id="hero" class="relative min-h-screen flex items-center justify-center px-4 sm:px-8 overflow-hidden">
             <!-- Background Image with Overlay -->
             <div class="absolute inset-0 z-0">
-                <img src="https://image.qwenlm.ai/public_source/8f265f4b-5855-4893-87d2-d281307ccd39/180d664df-8020-426e-b239-bf183c121a90.png" alt="Background" class="w-full h-full object-cover opacity-30">
+                <img src="assets/img/img1.webp" alt="Background" class="w-full h-full object-cover opacity-30">
                 <div class="absolute inset-0 bg-gradient-to-b from-dark-900/80 via-dark-900/50 to-dark-900"></div>
             </div>
 
@@ -382,7 +335,7 @@
                     <p class="text-slate-400 leading-relaxed mb-6">
                         Los 6 Principios que lo Cambian Todo. Antes de escribir cualquier prompt, estos principios deben estar integrados en tu forma de pensar.
                     </p>
-                    <img src="https://image.qwenlm.ai/public_source/8f265f4b-5855-4893-87d2-d281307ccd39/1fd4e9358-85ac-47d5-aae9-a58a7589ddd0.png" alt="AI Brain" class="rounded-xl shadow-2xl shadow-primary-500/10 w-full object-cover max-h-64">
+                    <img src="assets/img/img2.webp" alt="AI Brain" loading="lazy" width="1024" height="1024" class="rounded-xl shadow-2xl shadow-primary-500/10 w-full object-cover max-h-64">
                 </div>
 
                 <div class="md:w-2/3 grid gap-6">
@@ -476,7 +429,7 @@
                                 <span class="text-xs bg-red-500/20 text-red-300 px-2 py-1 rounded">147 tokens</span>
                             </div>
                             <div class="bg-slate-950 p-4 rounded-lg border border-slate-800 font-mono text-sm text-slate-500 italic mb-4">
-                                "Hola, espero que estés bien. Quería saber si podrías ayudarme con una pequeña tarea. Necesito que me hagas un resumen de las ventajas del teletrabajo, pero que sea breve y con puntos clave. Muchas gracias de antemario."
+                                "Hola, espero que estés bien. Quería saber si podrías ayudarme con una pequeña tarea. Necesito que me hagas un resumen de las ventajas del teletrabajo, pero que sea breve y con puntos clave. Muchas gracias de antemano."
                             </div>
                             <div class="flex gap-2 text-xs text-slate-500">
                                 <span class="flex items-center gap-1"><i class="fas fa-exclamation-triangle text-red-500"></i> Precisión: Baja</span>
@@ -538,14 +491,14 @@
                     <p class="text-slate-400 leading-relaxed mb-6">
                         Técnicas que separan a quien "usa IA" de quien la domina. Cada patrón está probado en producción real.
                     </p>
-                    <img src="https://image.qwenlm.ai/public_source/8f265f4b-5855-4893-87d2-d281307ccd39/159ac17d3-45af-4b53-8126-532c78058c30.png" alt="Nodes" class="rounded-xl shadow-2xl shadow-primary-500/10 w-full object-cover max-h-64">
+                    <img src="assets/img/img3.webp" alt="Nodes" loading="lazy" width="1024" height="1024" class="rounded-xl shadow-2xl shadow-primary-500/10 w-full object-cover max-h-64">
                 </div>
 
                 <div class="md:w-2/3 grid gap-6">
                     
                     <!-- Pattern 1 -->
                     <div class="glass-card rounded-xl overflow-hidden">
-                        <div class="p-6 border-b border-slate-800/50 flex justify-between items-center cursor-pointer hover:bg-slate-800/30 transition-colors" onclick="toggleAccordion('pattern1')">
+                        <div class="p-6 border-b border-slate-800/50 flex justify-between items-center cursor-pointer hover:bg-slate-800/30 transition-colors" role="button" tabindex="0" aria-expanded="false" aria-controls="pattern1" onclick="toggleAccordion(\'pattern1\')">
                             <div class="flex items-center gap-4">
                                 <div class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-300">
                                     <i class="fas fa-list"></i>
@@ -577,7 +530,7 @@ id,nombre,ventas,region
 
                     <!-- Pattern 2 -->
                     <div class="glass-card rounded-xl overflow-hidden">
-                        <div class="p-6 border-b border-slate-800/50 flex justify-between items-center cursor-pointer hover:bg-slate-800/30 transition-colors" onclick="toggleAccordion('pattern2')">
+                        <div class="p-6 border-b border-slate-800/50 flex justify-between items-center cursor-pointer hover:bg-slate-800/30 transition-colors" role="button" tabindex="0" aria-expanded="false" aria-controls="pattern2" onclick="toggleAccordion(\'pattern2\')">
                             <div class="flex items-center gap-4">
                                 <div class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-300">
                                     <i class="fas fa-book"></i>
@@ -612,7 +565,7 @@ Output:</pre>
 
                     <!-- Pattern 3 -->
                     <div class="glass-card rounded-xl overflow-hidden">
-                        <div class="p-6 border-b border-slate-800/50 flex justify-between items-center cursor-pointer hover:bg-slate-800/30 transition-colors" onclick="toggleAccordion('pattern3')">
+                        <div class="p-6 border-b border-slate-800/50 flex justify-between items-center cursor-pointer hover:bg-slate-800/30 transition-colors" role="button" tabindex="0" aria-expanded="false" aria-controls="pattern3" onclick="toggleAccordion(\'pattern3\')">
                             <div class="flex items-center gap-4">
                                 <div class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-300">
                                     <i class="fas fa-code"></i>
@@ -643,7 +596,7 @@ Output:</pre>
 
                      <!-- Pattern 4 -->
                      <div class="glass-card rounded-xl overflow-hidden">
-                        <div class="p-6 border-b border-slate-800/50 flex justify-between items-center cursor-pointer hover:bg-slate-800/30 transition-colors" onclick="toggleAccordion('pattern4')">
+                        <div class="p-6 border-b border-slate-800/50 flex justify-between items-center cursor-pointer hover:bg-slate-800/30 transition-colors" role="button" tabindex="0" aria-expanded="false" aria-controls="pattern4" onclick="toggleAccordion(\'pattern4\')">
                             <div class="flex items-center gap-4">
                                 <div class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-300">
                                     <i class="fas fa-shield-alt"></i>
@@ -833,7 +786,7 @@ Output SOLO código, sin explicación.</pre>
                     <p class="text-slate-400 leading-relaxed mb-6">
                         El texto tiene más variables subjetivas que el código. Estos patrones los convierten en especificaciones objetivas.
                     </p>
-                    <img src="https://image.qwenlm.ai/public_source/8f265f4b-5855-4893-87d2-d281307ccd39/18d9c6956-c106-468f-838a-a9cea21efae0.png" alt="Text Content" class="rounded-xl shadow-2xl shadow-primary-500/10 w-full object-cover max-h-64">
+                    <img src="assets/img/img4.webp" alt="Text Content" loading="lazy" width="1024" height="1024" class="rounded-xl shadow-2xl shadow-primary-500/10 w-full object-cover max-h-64">
                 </div>
 
                 <div class="md:w-2/3 space-y-8">
@@ -1103,7 +1056,7 @@ Output: SOLO el prompt reescrito, sin explicación.
                     <p class="text-slate-400 leading-relaxed mb-6">
                         Antes de enviar cualquier prompt, verifica estos puntos. Marca cada uno mentalmente. Si fallas 3+, reescribe.
                     </p>
-                    <img src="https://image.qwenlm.ai/public_source/8f265f4b-5855-4893-87d2-d281307ccd39/1642a2e9b-7d5b-4d96-81a6-3f34a27193ac.png" alt="Checklist" class="rounded-xl shadow-2xl shadow-primary-500/10 w-full object-cover max-h-64">
+                    <img src="assets/img/img5.webp" alt="Checklist" loading="lazy" width="1024" height="1024" class="rounded-xl shadow-2xl shadow-primary-500/10 w-full object-cover max-h-64">
                 </div>
 
                 <div class="md:w-2/3 w-full">
@@ -1425,28 +1378,58 @@ Output: SOLO el prompt reescrito, sin explicación.
         function toggleAccordion(id) {
             const content = document.getElementById(id);
             const icon = document.getElementById(`icon-${id}`);
-            
-            if (content.classList.contains('hidden')) {
+            const header = document.querySelector(`[aria-controls="${id}"]`);
+            const opening = content.classList.contains('hidden');
+
+            if (opening) {
                 content.classList.remove('hidden');
                 icon.style.transform = 'rotate(180deg)';
             } else {
                 content.classList.add('hidden');
                 icon.style.transform = 'rotate(0deg)';
             }
+            content.setAttribute('aria-hidden', opening ? 'false' : 'true');
+            if (header) header.setAttribute('aria-expanded', opening ? 'true' : 'false');
         }
 
+        // Accesibilidad: abrir acordeones con Enter / Espacio
+        document.querySelectorAll('[role="button"][aria-controls]').forEach(el => {
+            el.addEventListener('keydown', (ev) => {
+                if (ev.key === 'Enter' || ev.key === ' ') {
+                    ev.preventDefault();
+                    el.click();
+                }
+            });
+        });
+
         // Copy to Clipboard
+        function copyText(text) {
+            if (navigator.clipboard && window.isSecureContext) {
+                return navigator.clipboard.writeText(text);
+            }
+            return new Promise((resolve, reject) => {
+                try {
+                    const ta = document.createElement('textarea');
+                    ta.value = text;
+                    ta.setAttribute('readonly', '');
+                    ta.style.position = 'fixed';
+                    ta.style.top = '-1000px';
+                    document.body.appendChild(ta);
+                    ta.select();
+                    const ok = document.execCommand('copy');
+                    document.body.removeChild(ta);
+                    ok ? resolve() : reject(new Error('copy failed'));
+                } catch (err) { reject(err); }
+            });
+        }
         document.querySelectorAll('.copy-btn').forEach(btn => {
             btn.addEventListener('click', (e) => {
                 e.preventDefault();
-                const targetId = btn.getAttribute('data-target');
-                const targetEl = document.getElementById(targetId);
-                
+                const targetEl = document.getElementById(btn.getAttribute('data-target'));
                 if (targetEl) {
-                    const textToCopy = targetEl.innerText;
-                    navigator.clipboard.writeText(textToCopy).then(() => {
-                        showToast();
-                    });
+                    copyText(targetEl.innerText)
+                        .then(showToast)
+                        .catch(() => alert('No se pudo copiar automáticamente. Selecciona el texto y cópialo a mano.'));
                 }
             });
         });
