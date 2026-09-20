@@ -1,6 +1,8 @@
 # ⚡ PROMPT ELITE MASTERY
 > **Guía Definitiva 5-en-1** | TokenDensity × PromptElite × PromptCraft × Kimi Elite × Prompt Mastery  
 > `Cada token tiene un costo. Cada instrucción tiene un impacto.`
+>
+> ✍️ **Creada por Andres MAG**
 
 [![Version](https://img.shields.io/badge/Version-2026.1-0ea5e9?style=flat-square)](#)
 [![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)](LICENSE)
@@ -134,7 +136,7 @@ git push origin feat/nueva-plantilla
 ---
 
 ## 📄 Licencia
-[MIT](LICENSE) © 2026 Andres MAG — Creado con precisión. Sin tokens desperdiciados.
+[MIT](LICENSE) © 2026 — Creada por **Andres MAG**. Sin tokens desperdiciados.
 
 ---
 > 🔗 **Úsalo en**: ChatGPT, Claude, Gemini, Copilot, Llama, Mistral, Ollama, o cualquier LLM.  
