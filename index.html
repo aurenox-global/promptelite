@@ -186,6 +186,42 @@
             align-items: center;
             transition: opacity 0.5s ease;
         }
+
+        /* ---- Taller interactivo ---- */
+        .tool{background:rgba(15,23,42,.6);border:1px solid #1e293b;border-radius:16px;padding:24px}
+        .tool h3{color:#fff;font-weight:800;margin:0 0 4px;font-size:1.15rem}
+        .tool .hint{color:#94a3b8;font-size:.82rem;margin:0 0 18px}
+        .tool label{display:block;color:#cbd5e1;font-size:.78rem;text-transform:uppercase;letter-spacing:.08em;margin:14px 0 6px;font-family:'JetBrains Mono',monospace}
+        .tool input,.tool textarea,.tool select{width:100%;background:#0b1120;border:1px solid #24344a;border-radius:10px;color:#e2e8f0;padding:11px 13px;font-family:inherit;font-size:.92rem;outline:none}
+        .tool input:focus,.tool textarea:focus,.tool select:focus{border-color:#0ea5e9;box-shadow:0 0 0 3px rgba(14,165,233,.15)}
+        .tool textarea{resize:vertical;min-height:84px}
+        .tool .grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+        @media(max-width:640px){.tool .grid2{grid-template-columns:1fr}}
+        .tbtn{cursor:pointer;border:none;border-radius:10px;padding:12px 18px;font-weight:700;font-size:.9rem;color:#fff;background:linear-gradient(180deg,#0ea5e9,#0284c7);box-shadow:0 8px 22px rgba(14,165,233,.25);margin-top:16px;transition:filter .15s}
+        .tbtn:hover{filter:brightness(1.1)}
+        .tbtn.ghost{background:transparent;border:1px solid #334155;color:#e2e8f0;box-shadow:none}
+        .tbtn.row{display:inline-flex;gap:10px;align-items:center}
+        .tool-out{margin-top:16px;background:#0b1120;border:1px solid #1e293b;border-radius:12px;padding:16px;white-space:pre-wrap;word-break:break-word;font-family:'JetBrains Mono',monospace;font-size:.86rem;color:#d7e5f5;display:none}
+        .tool-out.show{display:block}
+        .estimate{margin-top:10px;font-size:.8rem;color:#94a3b8;font-family:'JetBrains Mono',monospace}
+        .estimate b{color:#7ee787}
+        .checklist-lite{margin-top:16px;display:grid;gap:8px}
+        .chk{display:flex;gap:10px;align-items:flex-start;font-size:.9rem;color:#cbd5e1;background:#0b1120;border:1px solid #1e293b;border-radius:10px;padding:10px 12px}
+        .chk i{margin-top:2px}
+        .chk.pass i{color:#34d399}
+        .chk.fail i{color:#f87171}
+        .chk .why{color:#94a3b8;font-size:.8rem;display:block;margin-top:2px}
+        .scorewrap{display:flex;align-items:center;gap:14px;margin-top:18px}
+        .score{font-family:'JetBrains Mono',monospace;font-weight:800;font-size:1.6rem;color:#fff}
+        .scorebar{flex:1;height:10px;background:#1e293b;border-radius:99px;overflow:hidden}
+        .scorebar > span{display:block;height:100%;width:0;background:linear-gradient(90deg,#0ea5e9,#8b5cf6);transition:width .4s}
+        .challenge{background:rgba(15,23,42,.6);border:1px solid #1e293b;border-radius:14px;padding:18px;margin-top:14px}
+        .challenge .bad{color:#fca5a5;font-family:'JetBrains Mono',monospace;font-size:.86rem}
+        .challenge .good{display:none;margin-top:12px}
+        .challenge.open .good{display:block}
+        .chip{display:inline-block;font-size:.72rem;font-family:'JetBrains Mono',monospace;padding:3px 8px;border-radius:6px;margin:2px 4px 2px 0}
+        .chip.bad{background:rgba(248,113,113,.12);color:#fca5a5}
+        .chip.ok{background:rgba(52,211,153,.12);color:#6ee7b7}
     </style>
 </head>
 <body class="bg-dark-900 text-slate-300 antialiased selection:bg-primary-500 selection:text-white">
@@ -253,6 +289,12 @@
             </a>
             <a href="#errores" class="nav-link block px-4 py-2 rounded-lg text-sm font-medium hover:text-white hover:bg-slate-800/50 transition-all flex items-center gap-3">
                 <i class="fas fa-exclamation-triangle w-5 text-center text-slate-500"></i> 08. Errores
+            </a>
+            <a href="#conversar" class="nav-link block px-4 py-2 rounded-lg text-sm font-medium hover:text-white hover:bg-slate-800/50 transition-all flex items-center gap-3">
+                <i class="fas fa-comments w-5 text-center text-slate-500"></i> 09. Conversar IA
+            </a>
+            <a href="#taller" class="nav-link block px-4 py-2 rounded-lg text-sm font-medium hover:text-white hover:bg-slate-800/50 transition-all flex items-center gap-3">
+                <i class="fas fa-wand-magic-sparkles w-5 text-center text-slate-500"></i> 10. Taller
             </a>
         </div>
 
@@ -1273,6 +1315,287 @@ Output: SOLO el prompt reescrito, sin explicación.
             </div>
         </section>
 
+
+        <!-- Section 09: Conversar con la IA -->
+        <section id="conversar" class="py-24 px-4 sm:px-8 bg-dark-800/30 border-y border-slate-800/50">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-16">
+                    <div class="inline-block px-3 py-1 rounded-md bg-primary-500/10 text-primary-400 text-xs font-mono mb-4">§ 09</div>
+                    <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">Conversar con la IA</h2>
+                    <p class="text-slate-400 max-w-2xl mx-auto">Un prompt es una frase; una conversación es un sistema. Aquí está la parte que casi nadie enseña: cómo <b class="text-white">iterar</b>, gestionar el contexto y llevar a la IA de la mano hasta un resultado.</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="glass-card p-6 rounded-xl">
+                        <div class="flex items-center gap-3 mb-3"><i class="fas fa-arrows-rotate text-primary-400 text-xl"></i><h3 class="font-bold text-white">Itera, no reescribas</h3></div>
+                        <p class="text-sm text-slate-400">No vuelvas a escribir todo el prompt. Di <b class="text-slate-200">«cambia X, mantén Y»</b>: así no pierdes lo que ya estaba bien ni gastas tokens repitiendo contexto.</p>
+                    </div>
+                    <div class="glass-card p-6 rounded-xl">
+                        <div class="flex items-center gap-3 mb-3"><i class="fas fa-layer-group text-primary-400 text-xl"></i><h3 class="font-bold text-white">Gestiona el contexto</h3></div>
+                        <p class="text-sm text-slate-400">El historial largo encarece y distrae. <b class="text-slate-200">Resume</b> lo acordado (<i>«recapitula en 3 líneas»</i>) y <b class="text-slate-200">abre chat nuevo</b> cuando cambies de tema o el modelo empiece a mezclar cosas.</p>
+                    </div>
+                    <div class="glass-card p-6 rounded-xl">
+                        <div class="flex items-center gap-3 mb-3"><i class="fas fa-clipboard-question text-primary-400 text-xl"></i><h3 class="font-bold text-white">Contexto antes de pedir</h3></div>
+                        <p class="text-sm text-slate-400">Pega los datos, define el rol, el formato y los <b class="text-slate-200">criterios de éxito</b>. Si no lo haces, la IA adivina y acierta por suerte.</p>
+                    </div>
+                    <div class="glass-card p-6 rounded-xl">
+                        <div class="flex items-center gap-3 mb-3"><i class="fas fa-list-check text-primary-400 text-xl"></i><h3 class="font-bold text-white">Pide alternativas y elige</h3></div>
+                        <p class="text-sm text-slate-400">«Dame <b class="text-slate-200">3 versiones</b>: una directa, una formal y una provocadora» → eliges y pides <i>«desarrolla la 2»</i>. Mucho mejor que pedir "algo bueno".</p>
+                    </div>
+                    <div class="glass-card p-6 rounded-xl">
+                        <div class="flex items-center gap-3 mb-3"><i class="fas fa-circle-question text-primary-400 text-xl"></i><h3 class="font-bold text-white">Que pregunte antes de asumir</h3></div>
+                        <p class="text-sm text-slate-400">Añade: <i>«Si falta algún dato, <b class="text-slate-200">pregúntame antes</b> de responder»</i>. Evita respuestas largas construidas sobre suposiciones erróneas.</p>
+                    </div>
+                    <div class="glass-card p-6 rounded-xl">
+                        <div class="flex items-center gap-3 mb-3"><i class="fas fa-shield-halved text-primary-400 text-xl"></i><h3 class="font-bold text-white">Verifica y cierra</h3></div>
+                        <p class="text-sm text-slate-400">Pide <b class="text-slate-200">fuentes</b> o el paso a paso, detecta alucinaciones y termina con un resumen accionable: <i>«resume decisiones y próximos pasos»</i>.</p>
+                    </div>
+                </div>
+
+                <div class="grid lg:grid-cols-2 gap-8 mt-14">
+                    <div>
+                        <h3 class="text-2xl font-bold text-white mb-3">🧭 Flujo de conversación que funciona</h3>
+                        <p class="text-slate-400 text-sm mb-4">Ejemplo real de ida y vuelta (fijate en cómo se afina sin reescribir).</p>
+                        <div class="code-block mb-4">
+                            <div class="flex justify-between items-center bg-slate-950 px-4 py-2 border-b border-slate-800">
+                                <span class="text-xs text-slate-500 font-mono">conversacion.txt</span>
+                                <button class="text-xs text-primary-400 hover:text-white transition-colors copy-btn" data-target="code-conv1"><i class="fas fa-copy mr-1"></i> Copiar</button>
+                            </div>
+                            <pre class="code-content" id="code-conv1">TÚ: Eres editor técnico. Resume este artículo en 5 viñetas para un CTO. Solo texto, sin intro.
+IA: [5 viñetas]
+
+TÚ: Cambia el tono a más directo y recorta a 3 viñetas. Mantén las cifras.
+IA: [3 viñetas]
+
+TÚ: Añade al final una línea con el riesgo principal. Máx 12 palabras.
+IA: [riesgo]
+
+TÚ: Resume el resultado en una frase que pueda enviar por Slack.</pre>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 class="text-2xl font-bold text-white mb-3">🤖 Nivel agente (técnicas avanzadas)</h3>
+                        <p class="text-slate-400 text-sm mb-4">Cuando la tarea necesita pasos, herramientas o verificación.</p>
+                        <div class="grid sm:grid-cols-2 gap-4">
+                            <div class="glass-card p-5 rounded-xl">
+                                <h4 class="font-bold text-white mb-1">ReAct</h4>
+                                <p class="text-xs text-slate-400">Alterna <b class="text-slate-200">razonamiento + acción</b>: piensa, usa una herramienta, observa y repite. Base de los agentes.</p>
+                            </div>
+                            <div class="glass-card p-5 rounded-xl">
+                                <h4 class="font-bold text-white mb-1">Reflexión / autocrítica</h4>
+                                <p class="text-xs text-slate-400">«Critica tu propia respuesta y luego <b class="text-slate-200">reescríbela mejor</b>». Sube la calidad sin que tú corrijas.</p>
+                            </div>
+                            <div class="glass-card p-5 rounded-xl">
+                                <h4 class="font-bold text-white mb-1">Self-consistency</h4>
+                                <p class="text-xs text-slate-400">Pide 3 respuestas independientes y compara: si coinciden, hay más fiabilidad.</p>
+                            </div>
+                            <div class="glass-card p-5 rounded-xl">
+                                <h4 class="font-bold text-white mb-1">Tools / Function calling</h4>
+                                <p class="text-xs text-slate-400">Deja que la IA <b class="text-slate-200">ejecute acciones</b> (buscar, calcular, consultar una API) en vez de inventar datos.</p>
+                            </div>
+                            <div class="glass-card p-5 rounded-xl">
+                                <h4 class="font-bold text-white mb-1">RAG básico</h4>
+                                <p class="text-xs text-slate-400">Dale documentos como contexto y exige: «responde <b class="text-slate-200">solo</b> con la info del texto».</p>
+                            </div>
+                            <div class="glass-card p-5 rounded-xl">
+                                <h4 class="font-bold text-white mb-1">Salida estructurada</h4>
+                                <p class="text-xs text-slate-400">Pide <b class="text-slate-200">JSON/schema</b> exacto: integrable en código, sin parseo frágil.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid lg:grid-cols-3 gap-8 mt-14">
+                    <div class="lg:col-span-2">
+                        <h3 class="text-2xl font-bold text-white mb-3">🎛️ Cada modelo responde distinto</h3>
+                        <div class="grid sm:grid-cols-2 gap-4">
+                            <div class="glass-card p-5 rounded-xl"><h4 class="font-bold text-white mb-1">GPT</h4><p class="text-xs text-slate-400">Bueno con <b class="text-slate-200">system prompts</b> y JSON. Directo y conciso si se lo pides. Usa "system" para rol/reglas globales.</p></div>
+                            <div class="glass-card p-5 rounded-xl"><h4 class="font-bold text-white mb-1">Claude</h4><p class="text-xs text-slate-400">Se le da muy bien seguir <b class="text-slate-200">etiquetas XML</b> (<code>&lt;contexto&gt;…&lt;/contexto&gt;</code>) y asumir roles extensos. Excelente redacción larga.</p></div>
+                            <div class="glass-card p-5 rounded-xl"><h4 class="font-bold text-white mb-1">Gemini</h4><p class="text-xs text-slate-400">Fuerte en <b class="text-slate-200">contexto muy largo</b> y multimodal. Aprovecha para pegar documentos enteros.</p></div>
+                            <div class="glass-card p-5 rounded-xl"><h4 class="font-bold text-white mb-1">Llama / Ollama (local)</h4><p class="text-xs text-slate-400">Más sensible al <b class="text-slate-200">formato</b>: sé explícito con plantillas y evita instrucciones ambiguas; modelos pequeños necesitan pasos cortos.</p></div>
+                        </div>
+                    </div>
+                    <div class="glass-card p-6 rounded-xl">
+                        <h3 class="text-lg font-bold text-white mb-3"><i class="fas fa-triangle-exclamation text-red-400 mr-2"></i>Errores conversacionales</h3>
+                        <ul class="text-sm text-slate-400 space-y-2">
+                            <li>▸ Dejar el chat crecer sin límite hasta que confunde temas.</li>
+                            <li>▸ Corregir con «mal, hazlo otra vez» (sin decir <i>qué</i>).</li>
+                            <li>▸ Meter datos sensibles (contraseñas, DNI, claves) en el chat.</li>
+                            <li>▸ Creer la primera respuesta sin verificar datos/fuentes.</li>
+                            <li>▸ Repetir el contexto en cada mensaje en vez de confiar en el hilo.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 10: Taller interactivo -->
+        <section id="taller" class="py-24 px-4 sm:px-8 max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <div class="inline-block px-3 py-1 rounded-md bg-primary-500/10 text-primary-400 text-xs font-mono mb-4">§ 10</div>
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">Taller Interactivo</h2>
+                <p class="text-slate-400 max-w-2xl mx-auto">Pasa de leer a practicar. Todo funciona en tu navegador y <b class="text-white">sin conexión</b> (nada se envía a ningún servidor).</p>
+            </div>
+
+            <!-- Constructor -->
+            <div class="tool mb-8">
+                <h3><i class="fas fa-wand-magic-sparkles text-primary-400 mr-2"></i>Constructor de prompts</h3>
+                <p class="hint">Rellena los campos y genera un prompt denso listo para copiar. Deja en blanco lo que no aplique.</p>
+                <div class="grid2">
+                    <div>
+                        <label for="c-rol">Rol</label>
+                        <input id="c-rol" type="text" placeholder="p. ej. senior dev especialista en React">
+                    </div>
+                    <div>
+                        <label for="c-formato">Formato de salida</label>
+                        <input id="c-formato" type="text" placeholder="p. ej. 5 viñetas / tabla / JSON">
+                    </div>
+                </div>
+                <label for="c-tarea">Tarea (qué quieres)</label>
+                <textarea id="c-tarea" placeholder="p. ej. revisa este código y busca bugs de seguridad"></textarea>
+                <div class="grid2">
+                    <div>
+                        <label for="c-limites">Restricciones / límites</label>
+                        <textarea id="c-limites" placeholder="p. ej. sin intro, máx 120 palabras, solo puntos clave"></textarea>
+                    </div>
+                    <div>
+                        <label for="c-ejemplo">Ejemplo (opcional)</label>
+                        <textarea id="c-ejemplo" placeholder="input → output esperado"></textarea>
+                    </div>
+                </div>
+                <button class="tbtn" onclick="buildPrompt()"><i class="fas fa-bolt mr-1"></i> Generar prompt</button>
+                <div class="tool-out" id="c-out"></div>
+                <div class="estimate" id="c-est"></div>
+            </div>
+
+            <!-- Analizador -->
+            <div class="tool mb-8">
+                <h3><i class="fas fa-magnifying-glass text-primary-400 mr-2"></i>Analizador de prompts</h3>
+                <p class="hint">Pega tu prompt y comprueba qué reglas cumple (análisis local, sin IA).</p>
+                <label for="a-in">Tu prompt</label>
+                <textarea id="a-in" placeholder="Pega aquí el prompt que quieres revisar..." style="min-height:130px"></textarea>
+                <button class="tbtn" onclick="analyzePrompt()"><i class="fas fa-gauge-high mr-1"></i> Analizar</button>
+                <div class="scorewrap" id="a-wrap" style="display:none">
+                    <span class="score" id="a-score">0%</span>
+                    <div class="scorebar"><span id="a-bar"></span></div>
+                </div>
+                <div class="checklist-lite" id="a-check"></div>
+            </div>
+
+            <!-- Retos -->
+            <div class="tool">
+                <h3><i class="fas fa-lightbulb text-primary-400 mr-2"></i>Retos: mejora el prompt</h3>
+                <p class="hint">Intenta mejorarlos tú y luego despliega la solución.</p>
+
+                <div class="challenge" id="ch1">
+                    <div class="bad">«Hazme un resumen de este texto, por favor, que sea bueno»</div>
+                    <button class="tbtn ghost row" onclick="toggleCh('ch1')"><i class="fas fa-chevron-down"></i> Ver solución</button>
+                    <div class="good">
+                        <div class="code-block">
+                            <div class="flex justify-between items-center bg-slate-950 px-4 py-2 border-b border-slate-800">
+                                <span class="text-xs text-slate-500 font-mono">solución</span>
+                                <button class="text-xs text-primary-400 hover:text-white transition-colors copy-btn" data-target="sol1"><i class="fas fa-copy mr-1"></i> Copiar</button>
+                            </div>
+                            <pre class="code-content" id="sol1">Resume este texto en 5 viñetas. Tono profesional. Solo puntos clave, sin intro ni cierre.</pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="challenge" id="ch2">
+                    <div class="bad">«Eres un experto. Escribe algo sobre marketing.»</div>
+                    <button class="tbtn ghost row" onclick="toggleCh('ch2')"><i class="fas fa-chevron-down"></i> Ver solución</button>
+                    <div class="good">
+                        <div class="code-block">
+                            <div class="flex justify-between items-center bg-slate-950 px-4 py-2 border-b border-slate-800">
+                                <span class="text-xs text-slate-500 font-mono">solución</span>
+                                <button class="text-xs text-primary-400 hover:text-white transition-colors copy-btn" data-target="sol2"><i class="fas fa-copy mr-1"></i> Copiar</button>
+                            </div>
+                            <pre class="code-content" id="sol2">Eres copywriter direct-response para SaaS B2B.
+
+Tarea: escribe 3 asuntos de email para una demo gratuita.
+Formato: lista numerada, cada uno máx 60 caracteres.
+Restricciones: sin emojis, sin promesas de dinero, tono claro.
+Tu público: CTOs de startups de 10-50 personas.</pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="challenge" id="ch3">
+                    <div class="bad">«Revisa mi código y dime si está bien»</div>
+                    <button class="tbtn ghost row" onclick="toggleCh('ch3')"><i class="fas fa-chevron-down"></i> Ver solución</button>
+                    <div class="good">
+                        <div class="code-block">
+                            <div class="flex justify-between items-center bg-slate-950 px-4 py-2 border-b border-slate-800">
+                                <span class="text-xs text-slate-500 font-mono">solución</span>
+                                <button class="text-xs text-primary-400 hover:text-white transition-colors copy-btn" data-target="sol3"><i class="fas fa-copy mr-1"></i> Copiar</button>
+                            </div>
+                            <pre class="code-content" id="sol3">Eres senior dev especialista en [LENGUAJE].
+
+Revisa este código en orden:
+1. Bugs / race conditions
+2. Seguridad (injection, auth)
+3. Performance (O(n²) o peor)
+4. Legibilidad
+
+Por cada issue:
+- Línea: [n]
+- Severidad: [CRÍTICO|ADVERTENCIA|ESTILO]
+- Problema: [1 línea]
+- Fix: [código mínimo]
+
+Si no hay issues: escribe "✓ OK".
+
+Código:
+`[PEGA AQUÍ]`</pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="challenge" id="ch4">
+                    <div class="bad">«Piensa paso a paso y explícame todo sobre las criptomonedas»</div>
+                    <button class="tbtn ghost row" onclick="toggleCh('ch4')"><i class="fas fa-chevron-down"></i> Ver solución</button>
+                    <div class="good">
+                        <div class="code-block">
+                            <div class="flex justify-between items-center bg-slate-950 px-4 py-2 border-b border-slate-800">
+                                <span class="text-xs text-slate-500 font-mono">solución</span>
+                                <button class="text-xs text-primary-400 hover:text-white transition-colors copy-btn" data-target="sol4"><i class="fas fa-copy mr-1"></i> Copiar</button>
+                            </div>
+                            <pre class="code-content" id="sol4">Explica qué es una blockchain a un estudiante de instituto.
+
+Formato: máx 150 palabras, 1 analogía cotidiana, sin jerga.
+NO uses: "revolucionario", "piensa paso a paso", ni emojis.
+Termina con 1 pregunta para comprobar que lo entendió.</pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="challenge" id="ch5">
+                    <div class="bad">«Clasifica estos mensajes, no sé, tú decides las categorías»</div>
+                    <button class="tbtn ghost row" onclick="toggleCh('ch5')"><i class="fas fa-chevron-down"></i> Ver solución</button>
+                    <div class="good">
+                        <div class="code-block">
+                            <div class="flex justify-between items-center bg-slate-950 px-4 py-2 border-b border-slate-800">
+                                <span class="text-xs text-slate-500 font-mono">solución</span>
+                                <button class="text-xs text-primary-400 hover:text-white transition-colors copy-btn" data-target="sol5"><i class="fas fa-copy mr-1"></i> Copiar</button>
+                            </div>
+                            <pre class="code-content" id="sol5">Clasifica cada mensaje en UNA categoría exacta: soporte | ventas | spam | otro.
+
+Reglas:
+- Si dudas entre dos, elige la primera por orden.
+- No inventes categorías nuevas.
+- Ignora el texto, decide solo por intención.
+
+Salida: JSON array [{id, categoria}], sin texto extra.
+
+Mensajes:
+### [PEGA AQUÍ] ###</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Footer -->
         <footer class="py-12 px-4 sm:px-8 border-t border-slate-800 bg-dark-900">
             <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
@@ -1466,6 +1789,89 @@ Output: SOLO el prompt reescrito, sin explicación.
             }
         }
 
+
+        // ===================== Taller interactivo =====================
+        const $ = (id) => document.getElementById(id);
+
+        function copyOut(id){
+            const el = $(id);
+            if(!el) return;
+            copyText(el.innerText).then(showToast).catch(()=>alert('Copia manualmente el texto.'));
+        }
+
+        function buildPrompt(){
+            const rol = $('c-rol').value.trim();
+            const tarea = $('c-tarea').value.trim();
+            const formato = $('c-formato').value.trim();
+            const limites = $('c-limites').value.trim();
+            const ejemplo = $('c-ejemplo').value.trim();
+            const out = $('c-out'), est = $('c-est');
+
+            if(!tarea){ out.classList.add('show'); out.textContent = '⚠️ Escribe al menos la TAREA (qué quieres).'; est.innerHTML=''; return; }
+
+            let p = '';
+            if(rol) p += 'Eres ' + rol + '.\n\n';
+            p += 'TAREA: ' + tarea + '\n';
+            if(formato) p += '\nFORMATO: ' + formato + '\n';
+            const lims = limites ? limites.split(/\n|;/).map(s=>s.trim()).filter(Boolean) : [];
+            if(lims.length){ p += '\nRESTRICCIONES:\n' + lims.map(s=>'- '+s).join('\n') + '\n'; }
+            if(ejemplo) p += '\nEJEMPLO:\n' + ejemplo + '\n';
+
+            out.classList.add('show');
+            out.textContent = p;
+
+            const chars = p.length;
+            const tokens = Math.max(1, Math.round(chars/4));
+            const words = (p.trim().match(/\S+/g)||[]).length;
+            est.innerHTML = '📏 ~<b>' + tokens + '</b> tokens · ' + words + ' palabras · ' + chars + ' caracteres ' +
+                '<br>💡 Consejo: sustituye los huecos ([…]) antes de enviar. Sin relleno y con formato explícito ahorras ~70% de tokens.';
+
+            let cp = $('c-copy');
+            if(!cp){
+                cp = document.createElement('button');
+                cp.id = 'c-copy';
+                cp.className = 'tbtn ghost row';
+                cp.innerHTML = '<i class="fas fa-copy"></i> Copiar prompt';
+                cp.onclick = () => copyOut('c-out');
+                $('c-est').after(cp);
+            }
+            cp.style.display = 'inline-flex';
+        }
+
+        function analyzePrompt(){
+            const v = $('a-in').value.trim();
+            const checks = [
+                {ok:/(^|\s)eres\s|act[úu]a como|rol\s*:/i.test(v), pass:'Define un rol', why:'Añade «Eres [rol específico]».'},
+                {ok:/\b(resume|escribe|genera|analiza|traduce|revisa|crea|clasifica|explica|lista|compara|redacta|corrige|extrae|calcula|dise[ñn]a|optimiza)\w*/i.test(v), pass:'Verbo de tarea claro', why:'Empieza con un verbo de acción (resume, analiza, genera…).'},
+                {ok:/(formato|salida|output|json|tabla|vi[ñn]etas|puntos|lista|markdown)/i.test(v), pass:'Formato de salida indicado', why:'Especifica el formato (viñetas, tabla, JSON…).'},
+                {ok:/(m[áa]x(imo)?\s*\d+|\b\d+\s*(palabras|vi[ñn]etas|puntos|l[íi]neas|caracteres|items|ejemplos|frases))/i.test(v), pass:'Límite numérico', why:'Pon un límite numérico (máx 50 palabras, 5 viñetas…).'},
+                {ok:/(\bsin\b|\bno\b|excepto|evita|omite|nunca)/i.test(v), pass:'Restricciones negativas', why:'Di qué NO quieres («sin intro», «sin emojis»).'},
+                {ok:/(ejemplo|input\s*:|output\s*:|entrada\s*:|salida\s*:)/i.test(v), pass:'Ejemplo (few-shot)', why:'Incluye 1 ejemplo input→output si el formato no es obvio.'},
+                {ok:/(###|---|"""|```|<[a-z_]+>)/i.test(v), pass:'Usa delimitadores', why:'Separa instrucciones y datos con delimitadores (###, """, <tag>).'},
+                {ok:!/(por favor|podr[íi]as|hola\b|gracias|espero que|buenos d[íi]as|amablemente)/i.test(v), pass:'Sin relleno', why:'Quita cortesía/relleno («por favor», «podrías») — gasta tokens y no aporta.'},
+                {ok:((v.match(/\S+/g)||[]).length <= 160 && v.length>25), pass:'Densidad adecuada', why:'El prompt es muy corto (ambiguo) o muy largo (relleno). Apunta a 25–160 palabras.'}
+            ];
+            const total = checks.length;
+            const passed = checks.filter(c=>c.ok).length;
+            const pct = Math.round(passed/total*100);
+
+            $('a-check').innerHTML = checks.map(c =>
+                '<div class="chk ' + (c.ok?'pass':'fail') + '">' +
+                '<i class="fas ' + (c.ok?'fa-circle-check':'fa-circle-xmark') + '"></i>' +
+                '<span>' + (c.ok?'✅ ':'❌ ') + c.pass +
+                (!c.ok ? '<span class="why">→ ' + c.why + '</span>' : '') +
+                '</span></div>'
+            ).join('');
+
+            const wrap = $('a-wrap'); wrap.style.display = 'flex';
+            $('a-score').textContent = pct + '%';
+            $('a-bar').style.width = pct + '%';
+            $('a-bar').style.background = pct>=80 ? '#10b981' : (pct>=50 ? '#0ea5e9' : '#f87171');
+        }
+
+        function toggleCh(id){
+            const el = $(id); if(el) el.classList.toggle('open');
+        }
     </script>
 </body>
 </html>
